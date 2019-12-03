@@ -22,18 +22,8 @@ DEBUG_CFLAGS     := -c -Wall -shared -fPIC -Wno-format -g -DDEBUG -fexceptions -
 RELEASE_CFLAGS   := -c -Wall -shared -fPIC -Wno-unknown-pragmas -Wno-format -O3 -fexceptions -fnon-call-exceptions
 
 DEBUG_LDFLAGS    := -g -shared -fPIC
-RELEASE_LDFLAGS  := -shared -fPIC
 
 
-ifeq (YES, ${DEBUG})
-	CFLAGS       	+= ${DEBUG_CFLAGS}
-	LDFLAGS      	+= ${DEBUG_LDFLAGS}
-	OUTPUT_PATH	:= $(INSTALL_DIR)
-else
-	CFLAGS      	+= ${RELEASE_CFLAGS}
-	LDFLAGS      	+= ${RELEASE_LDFLAGS}
-	OUTPUT_PATH	:= $(INSTALL_DIR)
-endif
 
 #****************************************************************************
 # Makefile code common to all platforms
