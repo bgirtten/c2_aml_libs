@@ -14,7 +14,7 @@ DEBUG  		= YES
 DEFINES		=
 
 CROSS=$(CC:%gcc=%)
-G++		= $(CXX) 
+G++		= $(CXX)
 GCC		= $(CC)
 #LD 		= ld
 
@@ -26,12 +26,12 @@ RELEASE_LDFLAGS  := -shared -fPIC
 
 
 ifeq (YES, ${DEBUG})
-	CFLAGS       	:= ${DEBUG_CFLAGS}
-	LDFLAGS      	:= ${DEBUG_LDFLAGS}
+	CFLAGS       	+= ${DEBUG_CFLAGS}
+	LDFLAGS      	+= ${DEBUG_LDFLAGS}
 	OUTPUT_PATH	:= $(INSTALL_DIR)
 else
-	CFLAGS      	:= ${RELEASE_CFLAGS}
-	LDFLAGS      	:= ${RELEASE_LDFLAGS}
+	CFLAGS      	+= ${RELEASE_CFLAGS}
+	LDFLAGS      	+= ${RELEASE_LDFLAGS}
 	OUTPUT_PATH	:= $(INSTALL_DIR)
 endif
 
