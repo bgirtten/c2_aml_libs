@@ -16,7 +16,7 @@ DEFINES		=
 CROSS=$(CC:%gcc=%)
 G++		= $(CXX)
 GCC		= $(CC)
-#LD 		= ld
+LD 		= $(LD)
 
 DEBUG_CFLAGS     := -c -Wall -shared -fPIC -Wno-format -g -DDEBUG -fexceptions -fnon-call-exceptions
 RELEASE_CFLAGS   := -c -Wall -shared -fPIC -Wno-unknown-pragmas -Wno-format -O3 -fexceptions -fnon-call-exceptions
